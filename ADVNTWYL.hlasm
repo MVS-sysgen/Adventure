@@ -38,6 +38,7 @@ TREAD    CSECT ,
 ***********************************************************************
          LR    R5,R1               SAVE INPUT PARM PTR
          L     R1,0(,R5)           GET THE PTR TO THE MSG TEXT
+         L     R1,0(,R1)
          L     R2,4(,R5)           GET THE LENGTH
          L     R0,0(,R2)           ...
          LTR   R0,R0               IS IT THERE ?
@@ -45,7 +46,7 @@ TREAD    CSECT ,
          TPUT  (1),(0),R
 TRE0     EQU   *
          L     R1,8(,R5)           PICK UP THE ADDRESS OF THE INPUT
-*                                   TEXT
+         L     R1,0(,R1)            TEXT
          LR    R3,R1               SAVE THE BUFFER ADDRESS
          LA    R0,133              HOW MUCH WE CAN STAND
          ICM   R1,B'1000',TGETFLAG SHOW PROPER TGET STUFF
@@ -75,6 +76,7 @@ TWRITE   CSECT ,
          USING TWRITE,R12
          LR    R5,R1               SAVE PTR TO INPUT PARMS
          L     R1,0(R5)            PT TO OUTPUT TEXT
+         L     R1,0(R1)
          L     R2,4(R5)            GET OUTPUT LENGTH
          L     R0,0(R2)            ...
          TPUT  (1),(0),R           DO IT
