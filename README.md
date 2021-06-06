@@ -8,7 +8,16 @@ Colossal Cave Adventure (also known as ADVENT, Colossal Cave, or Adventure) is a
 
 1) run `make_jcl.sh > adventure.jcl`
 2) Submit the JCL on MVS 3.8j using the socket reader: `ncat -v -w5 localhost 3505 < adventure.jcl`
-3) Add `SYSC.PL1LIB` to `SYS1.PARMLIB(LNKLST00)` and re-ipl the system
+3) Add `SYSC.PL1LIB` to `SYS1.PROCLIB(IKJACCNT)` and then re-login:
+
+```
+...
+//IKJACCNT EXEC PGM=IKJEFT01,DYNAMNBR=64,
+//             PARM='EX ''SYS1.CMDPROC(TSOLOGON)'''
+//STEPLIB  DD  DISP=SHR,DSN=SYSC.PL1LIB  <== add this line
+//SYSHELP  DD  DISP=SHR,DSN=SYS1.HELP
+...
+```
 
 
 ## How to play
