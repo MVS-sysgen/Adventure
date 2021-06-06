@@ -13,4 +13,4 @@ Colossal Cave Adventure (also known as ADVENT, Colossal Cave, or Adventure) is a
 
 ## How to play
 
-It doesn't work right now so there's no way to play it outside of TK4-
+In TSO type `ADVENT` and play the game. To exit type `quit`.
