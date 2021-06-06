@@ -14,3 +14,5 @@ Colossal Cave Adventure (also known as ADVENT, Colossal Cave, or Adventure) is a
 ## How to play
 
 In TSO type `ADVENT` and play the game. To exit type `quit`.
+
+![](adventure.png)
