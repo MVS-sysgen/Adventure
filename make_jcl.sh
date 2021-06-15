@@ -1,3 +1,5 @@
+cd $(dirname $0)
+
 cat << 'END'
 //ADVNTURE JOB (SYS),'ADVENTURE',CLASS=A,
 //       MSGCLASS=A,REGION=4096K,

@@ -1,0 +1,3 @@
+# Installing Adventure
+sh bash ../SOFTWARE/ADVENT/make_jcl.sh > ../SOFTWARE/ADVENT/01_install_adventure.jcl
+sh ./submit.sh ../SOFTWARE/ADVENT/01_install_adventure.jcl
